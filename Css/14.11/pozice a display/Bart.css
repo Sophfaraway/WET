@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+.green {
+    background-color: green;
+    height: 300px;
+    width: 500px;
+    display: inline-block;
+    border-color: saddlebrown;
+    border-width: 5px;
+    margin: 10px 10px 10px 10px;
+    position: relative;
+}
+
+.tabule {
+    background-color: saddlebrown;
+    border: 10px;
+    width: 520px;
+    height: 320px;
+}
+ 
+.images {
+    height: 200px;
+    width: auto;
+    position: absolute;
+    left: 200px;
+    top: 180px;
+}
+.text {
+    color: white;
+    position: absolute;
+    left: 50px;
+    top: 30px;
+    font-family:'Caveat', cursive;
+}

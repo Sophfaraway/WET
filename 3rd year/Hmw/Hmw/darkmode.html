@@ -1,0 +1,87 @@
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Darkmode web</title>
+    </head>
+    <body>
+        <div id="lightmode">
+            <h1 id="nadpis">Hello Kitty</h1>
+            <p id="paragraph">Teacher: Why did you eat your homework, Joe?<br>
+                Joe: Because I don't have a dog.</p>
+            <button id="useless">PRESS ME PLS</button>
+        </div>
+        <div id="darkmode">
+            <h1 id="nadpis2">Hello Kitty</h1>
+            <p id="paragraph2">Teacher: Why did you eat your homework, Joe?<br>
+                Joe: Because I don't have a dog.</p>
+            <button id="useless2">PRESS ME PLS</button>  
+        </div>
+        <img src = "https://media.tenor.com/DTIl6DWhrZwAAAAi/moon-spacedoodles.gif" id="button2"/>
+    </body>
+</html>
+
+<script>
+    let button2 = document.querySelector("#button2");
+    let lightmode = document.querySelector("#lightmode");
+    let darkmode = document.querySelector("#darkmode");
+    let body = document.querySelector("body");
+
+    darkmode.style.display = "none";
+    lightmode.style.display = "block";
+    
+    button2.addEventListener("click", change);
+
+    function change(){
+            lightmode.style.display = "none";
+            darkmode.style.display = "block";
+            body.style.backgroundColor = "#202025";
+    }
+    
+
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+    body{
+        position: flex;
+        text-align: center;
+    }
+    #button2 {
+        position: absolute;
+        left: 20px;
+        top:20px;
+        width:100px;
+    }
+    #nadpis{
+        color: #A56DB0;
+        font-family:'Nunito', sans-serif;
+    }
+    #useless {
+        color: white;
+        background-color:#DE83A9;
+        border-color: #A56DB0;
+        font-family: 'Lora', serif;
+    }
+    #useless2 {
+        color: white ;
+        background-color: #D16D9C;
+        border-color: #A56DB0;
+        font-family: 'Lora', serif;
+
+    }
+    #paragraph{
+        font-family: 'Lora', serif;
+    }
+    #paragraph2 {
+        color: whitesmoke;
+        font-family: 'Lora', serif;
+    }
+    #nadpis2 {
+        color: #A56DB0;
+        font-family:'Nunito', sans-serif;
+    }
+
+</style>

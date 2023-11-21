@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://api.mapy.cz/loader.js"></script>
+	<script>Loader.load()</script>
+
+</head>
+<body>
+    
+    <header>
+        <img src="logo.png" class="logo" alt="">
+        <nav class="nav">
+            <ul>
+                <li> <a href="#about-us">About us</a></li>
+                <li> <a href="#menu">Menu</a></li>
+                <li> <a href="#contacts">Contacts</a></li>
+            </ul>
+        </nav> 
+
+        <h1 class="main-header">Domino's pizza</h1>
+
+        <div class="subheading">
+            <h2>Best fictional pizza in Prague</h2>
+            <a href="">Order delivery</a>
+            <a href="">Menu</a>
+        </div>
+
+        
+    </header>
+
+   
+
+    <section class=":section-about-us">
+        <h2 id="about-us" class="section-header">About us</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid illo possimus quia? Assumenda facilis quidem quod, dolores, earum debitis inventore iste quos nemo possimus ad odit natus! Maiores mollitia, ad eos odio voluptate, amet vero enim quam facilis deserunt porro alias voluptas corrupti! Ipsum aut perspiciatis eveniet quasi nulla nisi veritatis quisquam nam veniam, voluptatum illum eaque vero, voluptate accusamus omnis, atque rerum ad sed voluptatibus labore tempore enim dolorum eligendi. Placeat quia nam quas ipsum repellendus sint quod cumque beatae debitis laboriosam! Veniam, ab dolores eveniet fugit libero asperiores corrupti ratione, at sunt voluptate saepe esse aliquam. Nulla, ea!</p>
+    </section>
+
+    
+
+    <footer>
+
+    <div id="mapa" style="width:80vw; height: 400px;"></div>
+	<script type="text/javascript">
+		var stred = SMap.Coords.fromWGS84(14.41, 50.08);
+		var mapa = new SMap(JAK.gel("mapa"), stred, 10);
+		mapa.addDefaultLayer(SMap.DEF_BASE).enable();
+		mapa.addDefaultControls();	      	      
+	</script>
+
+    </footer>
+
+</body>
+</html>

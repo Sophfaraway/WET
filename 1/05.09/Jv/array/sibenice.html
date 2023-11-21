@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hádej nebo něco</h1>
+    <input type="text" id="input"></input>
+    <button id="button">Hádání</button>
+    <h2 id="h2"></h2>
+    <h3 id="h3"></h3>
+        <img src="sib1.png" alt="" id="sib1">
+        <img src="sib2.png" alt="" id="sib2">
+        <img src="sib3.png" alt="" id="sib3">
+        <img src="sib4.png" alt="" id="sib4">
+        <img src="sib5.png" alt="" id="sib5">
+        <img src="sib6.png" alt="" id="sib6">
+        <img src="sib7.png" alt="" id="sib7">
+    <script>
+        let input = document.getElementById("input")
+        let button = document.querySelector("#button")
+        let h2 = document.getElementById("h2")
+        let h3 = document.getElementById("h3")
+        let sib1 = document.getElementById("sib1")
+        let sib2 = document.getElementById("sib2")
+        let sib3 = document.getElementById("sib3")
+        let sib4 = document.getElementById("sib4")
+        let sib5 = document.getElementById("sib5")
+        let sib6 = document.getElementById("sib6")
+        let sib7 = document.getElementById("sib7")
+        
+        //obrazek.style.display = "none"
+        //obrazek.style.display = "block"
+
+        const seznamSlov = ["feet", "star", "night"]
+        // vybíráme náhodné slovo z seznamu
+        let slovo = seznamSlov[Math.floor(Math.random() * seznamSlov.length)]
+        console.log(slovo)
+        
+        // vytvoří z array odpověď
+        let underscore = []
+        h2.innerText = underscore
+
+        // za každé písmeno dá podtržítko
+        for (let i = 0; i < slovo.length; i++) {
+                underscore[i] = "_"
+            }
+        // každé písmeno z odpovědi vypíše do html
+        for (let i = 0; i < underscore.length; i++) {
+                h2.innerText += underscore[i]
+            }
+        let pocetPokusu = 0
+        let uhodnuto = false
+
+        button.addEventListener("click", something)
+        
+        sib1.style.display = "none"
+        sib2.style.display = "none"
+        sib3.style.display = "none"
+        sib4.style.display = "none"
+        sib5.style.display = "none"
+        sib6.style.display = "none"
+        sib7.style.display = "none"
+
+
+        function something() {
+            // přijmeme input z html a přiřadíme ho proměnné pismeno
+            let pismeno = input.value
+            input.value = ""
+            uhodnuto = false
+            // 
+            for (let i = 0; i < slovo.length; i++){
+                if (pismeno === slovo[i]){
+                    underscore[i] = pismeno
+                    uhodnuto = true 
+                }
+            }
+            if(uhodnuto === false){
+                pocetPokusu++
+                h3.innerText = pocetPokusu
+            }
+            if(pocetPokusu === 1){
+            sib1.style.display = "block"
+            }
+            if(pocetPokusu === 2){
+            sib1.style.display = "none"
+            sib2.style.display = "block"
+            }
+            if(pocetPokusu === 3){
+            sib2.style.display = "none"
+            sib3.style.display = "block"
+            }
+            if(pocetPokusu === 4){
+            sib3.style.display = "none"
+            sib4.style.display = "block"
+            }
+            if(pocetPokusu === 5){
+            sib4.style.display = "none"
+            sib5.style.display = "block"
+            }
+            if(pocetPokusu === 6){
+            sib5.style.display = "none"
+            sib6.style.display = "block"
+            }
+            if(pocetPokusu === 7){
+            sib6.style.display = "none"
+            sib7.style.display = "block"
+            }
+            h2.innerText = ""
+            // každé písmeno z odpovědi vypíše do html
+            for (let i = 0; i < underscore.length; i++){
+            h2.innerText += underscore[i]
+        }
+        }
+       
+
+    </script>
+</body>
+</html>

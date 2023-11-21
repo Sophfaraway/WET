@@ -1,0 +1,66 @@
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dark mode web</title>
+    </head>
+    <body>
+        <div id="lightmode">
+            <h1 id="nadpis">Nadpis</h1>
+            <p id="paragraph">Pink fluffy unicorns dancing on rainbows</p>
+            <button>BUTTON</button>
+        </div>
+        <div id="darkmode">
+            <h1 id="nadpis2">Nadpis</h1>
+            <p id="paragraph2">Pink fluffy unicorns dancing on rainbows</p>
+            <button>BUTTON</button>  
+        </div>
+        <img src="moon.png" id="button2"/>
+    </body>
+</html>
+
+<script>
+    let button2 = document.querySelector("#button2");
+    
+    let lightmode = document.querySelector("#lightmode");
+    let darkmode = document.querySelector("#darkmode");
+    let body = document.querySelector("body");
+
+    darkmode.style.display = "none";
+    lightmode.style.display = "block";
+    
+    button2.addEventListener("click", change);
+
+    function change(){
+            lightmode.style.display = "none";
+            darkmode.style.display = "block";
+            body.style.backgroundColor = "#333333";
+        // }else if(darkmode.style.display = "block"){
+        //     lightmode.style.display = "block";
+        //     darkmode.style.display = "none";
+        //     body.style.backgroundColor = "white";
+        // }
+    }
+
+
+</script>
+
+<style>
+    body{
+        position: flex;
+        text-align: center;
+    }
+    #button2 {
+        position: absolute;
+        left: 20px;
+        top:20px;
+        width:100px;
+    }
+    #paragraph2 {
+        color: white;
+    }
+    #nadpis2 {
+        color: blueviolet;
+    }
+
+</style>

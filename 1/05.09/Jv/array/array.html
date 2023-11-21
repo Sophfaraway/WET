@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Array</title>
+    </head>
+    <body>
+        <script>
+            const starWars = ["Darth Vader", "Luke Skywalker", "Obi-Wan Kenobi"]
+            starWars.push("Chewie", "Yoda", "Ewok", "Princess Leia")
+
+            starWars.pop()
+            // pop odebírá poslední hodnotu z arraye
+            starWars.shift()
+            // shift odebírá první hodnotu z arreye
+            starWars.splice(3, 1)
+            // od jakého indexu, kolik hodnot chceme odebrat
+            for (let i = 0; i < starWars.length; i++) {
+                console.log(starWars[i])
+            }
+        </script>
+    </body>
+</html>

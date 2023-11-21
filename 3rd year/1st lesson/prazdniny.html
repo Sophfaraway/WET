@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="prazdniny.css" />
+    <title>Document</title>
+    <img id="image" src="panda.jpg" class="button2" alt="" />
+    <img id="image2" src="smiley.png" class="button3" alt="" />
+  </head>
+  <body>
+    <h1 class="nadpis">Nadpis</h1>
+
+    <div class="odstavec">
+      never gonna give youu uppp never gonna let you doooown
+    </div>
+    <img src="plane.webp" alt="" class="img" /><br />
+    <button class="button">Press</button>
+  </body>
+</html>
+
+<script>
+  let nadpis = document.querySelector(".nadpis");
+  let odstavec = document.querySelector(".odstavec");
+  let button = document.querySelector(".button");
+  let img = document.querySelector(".img");
+  let button2 = document.querySelector(".button2");
+  let button3 = document.querySelector(".button3");
+  let image = document.querySelector("#image");
+
+  image2.style.display = "none";
+
+  button3.addEventListener("click", trebesin2);
+  button2.addEventListener("click", trebesin);
+  button.addEventListener("click", zmenNadpis);
+
+  function zmenNadpis() {
+    nadpis.innerText = "Bye Bye";
+  }
+  function trebesin() {
+    nadpis.innerText = "Škola";
+    odstavec.innerText =
+      "NEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE";
+    img.src = "school.jpg";
+    image.style.display = "none";
+    image2.style.display = "block";
+  }
+  function trebesin2() {
+    nadpis.innerText = "Nadpis";
+    odstavec.innerText =
+      "never gonna give youu uppp never gonna let you doooown";
+    img.src = "plane.webp";
+    image.src = "panda.jpg";
+    image.style.display = "block";
+    image2.style.display = "none";
+  }
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prezenčka</title>
+</head>
+<body>
+    <div id = "question">
+        <h1>Kolik kamenů je ve třídě?</h1>
+        <input type="number" id="input"></input>
+        <button id="button">Ok</button>
+    </div>
+    <div id = "div">
+        Prezenčka:
+        <ul id = "seznam"></ul>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    let seznam = document.getElementById("seznam");
+    let div = document.getElementById("div");
+    let button = document.getElementById("button");
+
+    div.style.display = "none";
+
+    button.addEventListener("click", pridejKameny);
+
+    function pridejKameny(){
+        const kameny = [];
+
+        div.style.display = "block";
+        question.style.display = "none";
+
+        for (let k = 0; k < input.value; k++){
+            kameny.push("kámen")
+        }
+        for (let i = 0; i < kameny.length; i++) {
+            const li = document.createElement("li");
+            li.textContent = kameny[i];
+            seznam.appendChild(li);
+        }
+    }
+</script>
+
+

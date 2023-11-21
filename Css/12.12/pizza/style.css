@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Rubik+80s+Fade&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Caveat', cursive;
+    font-family: 'Rubik 80s Fade', cursive;
+}
+/*  * - pro všechno */
+
+header {
+    height: 100vh;
+    width: 100vw;
+    background-image: url("pizza.jpg");
+    background-size: cover;
+    position: relative;
+    /* celý obrázek se roztáhne na výšku a šířku */
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 8%;
+    top: 5%;
+}
+
+.nav {
+    font-size: 1.1em;
+    text-align: center;
+    width: 60vw ;
+    position: absolute;
+    left: 20%;
+}
+/* em - relativně k velikosti fontu v konteineru ve kterém je */
+/* rem - defaltní k fontsize celé stránky (default textsize - 16px) */
+
+.nav li{
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 5%;
+    top: 2%;
+    /* font-weight: bold; - širší*/
+}
+/* padding 1. up/down 2. left/right */
+
+.nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.main-header {
+    font-size: 4.5vw;
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    text-align: center;
+    left: 8%;
+    bottom: 25%;
+    text-shadow: 0 0 10px black
+}
+/* vh - view height - relativně k výšce okna */
+/* vw - view width - -//- šířce okna */
+
+.subheading {
+    color: white;
+    text-decoration: none;
+    position: absolute;
+    bottom: 8%;
+    left: 8%;
+    margin-right: 7px;
+    /* border: 2px solid red; */
+}
+
+.subheading a {
+    text-decoration: none;
+    color: white;
+    border: 2px solid white;
+    padding: 10px;
+}
+
+section {
+    margin: 10vh 25vw;
+}
+
+section p {
+    text-align: justify;
+}
+
+
+footer {
+    display:flex;
+    justify-content:center;
+}

@@ -1,0 +1,27 @@
+.flag {
+    margin: 300px 0px 0px 300px;
+    font-size: 0px;
+}
+
+.black {
+    display: inline-block;
+    background-color: black;
+    width: 50px;
+    height: 100px;
+}
+
+.red{
+    display: inline-block;
+    background-color: red;
+    width: 50px;
+    height: 100px;
+
+}
+
+.yellow {
+    display: inline-block;
+    background-color: yellow;
+    height: 100px;
+    width: 50px;
+}
+

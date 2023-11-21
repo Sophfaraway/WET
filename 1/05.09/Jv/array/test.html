@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Zadej slovo:</h1>
+    <input type="text" id="input"></input>
+    <button id="button">Přidej slovo</button>
+    <h2 >Seznam slov:</h2>
+    <h3 id="h3"></h3>
+    <button id="button2">Zavolej Popelku</button>
+    <h2>Krátká slova:</h2>
+    <h3 id="h4"></h3>
+    <h2>Dlouhá slova:</h2>
+    <h3 id="h5"></h3>
+
+    <h1>Hodnocení</h1>
+    <h2>Jak moc mě bavil tento úkol</h2>
+    <input type="text" id="input2"></input>
+    <button id="button3">Hodnocení</button>
+    <h3 id="heartsDisplay"></h3>
+    <script>
+        let input = document.getElementById("input")
+       
+        let button = document.querySelector("#button")
+        let button2 = document.querySelector("#button2")
+        
+        let h3 = document.getElementById("h3")
+        let h4 = document.getElementById("h4")
+        let h5 = document.getElementById("h5")
+        let heartsDisplay = document.getElementById("heartsDisplay")
+
+        button.addEventListener("click", pridejSlovo)
+        const slova = []
+        h3.innerText = slova
+        function pridejSlovo(){
+            h3.innerText = ""
+            slova.push(input.value)
+            
+            for (let i = 0; i < slova.length; i++) {
+                h3.innerText += slova[i] + ","
+            }
+        }
+
+        button2.addEventListener("click", popelka)
+        function popelka(){
+            
+            
+            for (let i = 0; i < slova.length; i++){
+            if (slova.length < 5) {
+                h4.innerText = slova
+            }else if (5 <= slova.length) {
+                h5.innerText = slova
+            }
+            }
+        }
+
+
+        let input2 = document.getElementById("input2")
+        let button3 = document.querySelector("#button3")
+
+        button3.addEventListener("click", hearts)
+        function hearts(){
+            for (let i = 0; i <= input2.value ; i++){
+            heartsDisplay.innerText += "💗"
+            }
+        }
+    </script>
+</body>
+</html>
