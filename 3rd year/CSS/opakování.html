@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .ctverecek {
+        height: 200px;
+        aspect-ratio: 1/1;
+        border: 2px solid powderblue;
+        margin: 10px;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+        border: 2px solid black;
+      }
+
+      .jedna {
+        background-color: beige;
+        transition: 1s cubic-bezier(0.48, 0.13, 0.36, 1.04);
+      }
+
+      .ctverecek:nth-child(2) {
+        background-color: aquamarine;
+      }
+
+      .wrapper:hover .jedna {
+        background-color: rgb(240, 193, 233);
+        translate: 200% 50%;
+        rotate: 45deg;
+      }
+
+      body {
+        background-color: rgb(49, 48, 48);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="ctverecek jedna"></div>
+      <div class="ctverecek"></div>
+      <div class="ctverecek"></div>
+    </div>
+  </body>
+</html>

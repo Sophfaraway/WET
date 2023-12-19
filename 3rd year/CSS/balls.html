@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .allBalls {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: black 2px solid;
+        position: absolute;
+        top: 310px;
+        left: 325px
+
+      }
+      .ball1 {
+        background-color: aqua;
+        animation: juggle 1s linear forwards 1.5s infinite alternate;
+      }
+      .ball2 {
+        background-color: blueviolet;
+        animation: juggle 1s linear forwards 1.5s infinite alternate;
+        animation-delay: 1s;
+      }
+      .ball3 {
+        background-color: pink;
+        animation: juggle 1s linear forwards 1.5s infinite alternate;
+        animation-delay: 2s;
+      }
+      .head {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        border: black 3px solid;
+        position: absolute;
+        top: 234px;
+        left: 391px;
+      }
+      .torso {
+        width: 3px;
+        height: 180px;
+        background-color: black;
+        position: absolute;
+        top: 330px;
+        left: 439px;
+      }
+      .legL {
+        height: 100px;
+        width: 3px;
+        background-color: black;
+        rotate: -25deg;
+        top: 505px;
+        left: 460px;
+        position: absolute;
+      }
+      .legR {
+        height: 100px;
+        width: 3px;
+        background-color: black;
+        rotate: 25deg;
+        top: 505px;
+        left: 418px;
+        position: absolute;
+      }
+      .armL {
+        height: 100px;
+        width: 3px;
+        background-color: black;
+        animation: movingArms 0.5s linear forwards 1s infinite alternate;
+      }
+
+      .armR {
+        height: 100px;
+        width: 3px;
+        background-color: black;
+        rotate: -60deg;
+        top: 330px;
+        left: 395px;
+        position: absolute
+      }
+
+      .handL {
+        font-size: 45px;
+      }
+
+      .container{
+        rotate: 60deg;
+        top: 330px;
+        left: 483px;
+        position: absolute;
+      }
+
+      @keyframes juggle {
+        0% { 
+            transform: rotate(90deg)  
+                  translateY(0px);
+            } 
+  
+        100% { 
+          transform: rotate(180deg)  
+                translateX(-200px)
+        } 
+      }
+
+      @keyframes movingArms {
+      100% { 
+          transform: rotate(-25deg)translate(0px);
+		      transform-origin: 0% 20%;
+        } 
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head"></div>
+    <div class="torso"></div>
+    <div class="legL"></div>
+    <div class="legR"></div>
+    <div class="container">
+      <div class="armL"></div>
+      <div class="handL">✋</div>
+    </div>
+    <div class="armR"></div>
+    <div class="ball1 allBalls"></div>
+    <div class="ball2 allBalls"></div>
+    <div class="ball3 allBalls"></div>
+  </body>
+</html>
