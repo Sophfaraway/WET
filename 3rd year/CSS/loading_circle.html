@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading</title>
+    <style>
+      body {
+        background-color: rgb(37, 36, 37);
+      }
+
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .circle {
+        width: 50px;
+        aspect-ratio: 1/1;
+        border: solid 5px rgb(91, 89, 92);
+        border-top: solid 5px white;
+        border-radius: 50%;
+        animation: loading 1s linear forwards infinite;
+      }
+
+      @keyframes loading {
+        100% {
+          rotate: 360deg;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="circle"></div>
+    </div>
+  </body>
+</html>
