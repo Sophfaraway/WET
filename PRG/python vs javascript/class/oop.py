@@ -10,7 +10,7 @@ class Student:
 
 class Zak(Student):
     def __init__(self, name, school, color):
-        super().__init__(self, name, school, color)
+        super().__init__(name, school, color)
 
 
 hvezdon = Student("Hvězdoň", "Třebešín", "yellow")
@@ -20,3 +20,6 @@ hvezdon.speak("Hewwo ")
 
 rizek = Student("Řízek", "Úžlabina", "blue")
 rizek.speak("Od slova řízek ")
+
+ida = Zak("Ida", "Jakutská", "růžová")
+ida.speak("Dobrý den ")

@@ -23,8 +23,13 @@ invul = True
 
 lives = 3
 
-player = Player()
+player = pygame.sprite.GroupSingle()
+player.add(Player())
+
+monsters = pygame.sprite.Group()
 monster = Monster()
+monsters.add(monster)
+
 # game loop
 while True:
     # checks what happens in the game
@@ -34,30 +39,23 @@ while True:
             pygame.quit()
             exit()
 
-    elapsed_time += clock.get_time()
-    if elapsed_time > 2000:
-        invul = False
-
     if game_over == False:
         # colors backround black
         screen.fill((100, 0, 100))
 
         player.draw(screen)
-        player.update()
+        player.update(monsters)
+
         monster.draw(screen)
         monster.update()
         monster.animation()
 
-        text = font.render(f"Lives: {lives}", False, "#FFFFFF")
+        player.sprite.invul_time += clock.get_time()
+
+        text = font.render(f"Lives: {player.sprite.lives}", False, "#FFFFFF")
         screen.blit(text, (700, 10))
 
-        if player.rect.colliderect(monster.rect):
-            if not invul:
-                lives -= 1
-                invul = True
-                elapsed_time = 0
-
-        if lives <= 0:
+        if player.sprite.lives <= 0:
             game_over = True
 
     else:
