@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap");
+
       body {
         background-color: #181818;
       }
@@ -24,6 +26,15 @@
         background: url("pozadinadpisu.png");
         background-position: 0 0;
         -webkit-background-clip: text;
+        background-clip: text;
+        animation: text 15s linear infinite;
+        font-family: "Libre Baskerville", serif;
+      }
+
+      @keyframes text {
+        100% {
+          background-position: 1000px 0px;
+        }
       }
     </style>
   </head>
