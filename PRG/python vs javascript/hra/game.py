@@ -5,6 +5,8 @@ from utility import get_image
 from player import Player
 from monster import Monster
 
+# from level import Level
+
 # inicializes the game - starts it
 pygame.init()
 
@@ -53,7 +55,7 @@ while True:
         player.sprite.invul_time += clock.get_time()
 
         text = font.render(f"Lives: {player.sprite.lives}", False, "#FFFFFF")
-        screen.blit(text, (700, 10))
+        screen.blit(text, (1200, 10))
 
         if player.sprite.lives <= 0:
             game_over = True
@@ -62,7 +64,7 @@ while True:
         screen.fill((0, 0, 0))
         font2 = pygame.font.Font(None, 100)
         text2 = font2.render(f"Game over", False, "#FFFFFF")
-        screen.blit(text2, (220, 265))
+        screen.blit(text2, (450, 340))
 
     pygame.display.update()
     clock.tick(60)

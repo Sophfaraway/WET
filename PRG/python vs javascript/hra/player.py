@@ -15,6 +15,7 @@ class Player(pygame.sprite.Sprite):
         self.lives = 3
         self.invul = False
         self.invul_time = 0
+        self.speed = 10
 
     def animation(self, direction):
         frame_count = 4
@@ -28,16 +29,16 @@ class Player(pygame.sprite.Sprite):
     def update(self, monsters):
         key = pygame.key.get_pressed()
         if key[pygame.K_a]:
-            self.rect.left -= 10
+            self.rect.left -= self.speed
             self.animation(2)
         if key[pygame.K_d]:
-            self.rect.right += 10
+            self.rect.right += self.speed
             self.animation(3)
         if key[pygame.K_s]:
-            self.rect.bottom += 10
+            self.rect.bottom += self.speed
             self.animation(0)
         if key[pygame.K_w]:
-            self.rect.top -= 10
+            self.rect.top -= self.speed
             self.animation(1)
 
         if self.rect.x > screen_width:
@@ -55,9 +56,11 @@ class Player(pygame.sprite.Sprite):
                 self.lives -= 1
                 self.invul = True
                 self.invul_time = 0
+                self.speed = 20
 
         if self.invul_time > 2000:
             self.invul = False
+            self.speed = 10
 
     def draw(self, screen):
         screen.blit(self.image, self.rect)
