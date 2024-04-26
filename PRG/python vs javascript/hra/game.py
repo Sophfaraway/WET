@@ -4,6 +4,7 @@ from settings import *
 from utility import get_image
 from player import Player
 from monster import Monster
+from level import Level
 
 # from level import Level
 
@@ -26,14 +27,33 @@ invul = True
 lives = 3
 
 player = pygame.sprite.GroupSingle()
-player.add(Player())
+# player.add(Player())
 
 monsters = pygame.sprite.Group()
-monster = Monster()
-monsters.add(monster)
+# monster = Monster()
+# monsters.add(monster)
+
+desk_group = pygame.sprite.Group()
+coin_group = pygame.sprite.Group()
+powerup_group = pygame.sprite.Group()
+all_sprites = pygame.sprite.Group()
+# desk_group.draw(screen)
+
+sprite_groups = {
+    "all": all_sprites,
+    "player_group": player,
+    "monsters_group": monsters,
+    "desk_group": desk_group,
+    "coin_group": coin_group,
+    "powerup_group": powerup_group,
+}
+
+level = Level("tiled/ucebna-final.tmx", screen, sprite_groups)
+
 
 # game loop
 while True:
+    level.draw_backround()
     # checks what happens in the game
     for event in pygame.event.get():
         # turns it off
@@ -42,15 +62,18 @@ while True:
             exit()
 
     if game_over == False:
-        # colors backround black
-        screen.fill((100, 0, 100))
+        # screen.fill((100, 0, 100))
+        level.draw_backround()
 
-        player.draw(screen)
-        player.update(monsters)
+        monsters.update()
+        # player.draw(screen)
+        player.update()
 
-        monster.draw(screen)
-        monster.update()
-        monster.animation()
+        # monster.draw(screen)
+        # monster.update()
+        # monster.animation()
+
+        all_sprites.draw(screen)
 
         player.sprite.invul_time += clock.get_time()
 
