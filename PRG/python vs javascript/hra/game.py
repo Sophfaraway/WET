@@ -3,6 +3,8 @@ from sys import exit
 from settings import *
 from utility import get_image
 from player import Player
+
+# from player import Player2
 from monster import Monster
 from level import Level
 
