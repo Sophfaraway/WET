@@ -2,7 +2,8 @@ import pygame
 from sys import exit
 from settings import *
 from utility import get_image
-from player import Player
+from player import Player1
+from player import Player2
 
 # from player import Player2
 from monster import Monster
@@ -29,6 +30,7 @@ invul = True
 lives = 3
 
 player = pygame.sprite.GroupSingle()
+player2 = pygame.sprite.GroupSingle()
 # player.add(Player())
 
 monsters = pygame.sprite.Group()
@@ -44,6 +46,7 @@ all_sprites = pygame.sprite.Group()
 sprite_groups = {
     "all": all_sprites,
     "player_group": player,
+    "player2_group": player2,
     "monsters_group": monsters,
     "desk_group": desk_group,
     "coin_group": coin_group,
@@ -70,6 +73,7 @@ while True:
         monsters.update()
         # player.draw(screen)
         player.update()
+        player2.update()
 
         # monster.draw(screen)
         # monster.update()
@@ -79,8 +83,19 @@ while True:
 
         player.sprite.invul_time += clock.get_time()
 
-        text = font.render(f"Lives: {player.sprite.lives}", False, "#FFFFFF")
-        screen.blit(text, (1200, 10))
+        player1_text = font.render("Player 1:", False, "#FFFFFF")
+        lives1 = font.render(f"Lives: {player.sprite.lives}", False, "#FFFFFF")
+        score1 = font.render(f"Score: {player.sprite.score}", False, "#FFFFFF")
+        screen.blit(lives1, (15, 665))
+        screen.blit(score1, (15, 685))
+        screen.blit(player1_text, (15, 650))
+
+        player2_text = font.render("Player 2:", False, "#FFFFFF")
+        lives2 = font.render(f"Lives: {player2.sprite.lives}", False, "#FFFFFF")
+        score2 = font.render(f"Score: {player2.sprite.score}", False, "#FFFFFF")
+        screen.blit(lives2, (1190, 665))
+        screen.blit(score2, (1190, 685))
+        screen.blit(player2_text, (1190, 640))
 
         if player.sprite.lives <= 0:
             game_over = True

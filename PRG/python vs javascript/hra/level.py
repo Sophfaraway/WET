@@ -2,7 +2,8 @@ import pygame
 from pytmx.util_pygame import load_pygame
 from items import Desk, Coin, PowerUp
 from monster import Monster
-from player import Player
+from player import Player1
+from player import Player2
 
 
 class Level:
@@ -42,6 +43,7 @@ class Level:
         self.create_items(self.spawn_powerups, PowerUp, self.powerup_group)
         self.create_monsters(self.spawn_enemies_h, self.monsters_group)
         self.create_player(self.spawn_player, self.player_group)
+        self.create_player2(self.spawn_player, self.player2_group)
 
     def create_items(self, layer, item_class, group):
         for item in layer:
@@ -57,9 +59,15 @@ class Level:
 
     def create_player(self, layer, group):
         for player in layer:
-            new_player = Player((player.x, player.y), self.sprite_groups)
+            new_player = Player1((player.x, player.y), self.sprite_groups)
             group.add(new_player)
             self.all.add(new_player)
+
+    def create_player2(self, layer, group):
+        for player in layer:
+            new_player2 = Player2((player.x, player.y), self.sprite_groups)
+            group.add(new_player2)
+            self.all.add(new_player2)
 
 
 # path = "../assets/tiled/ucebna2.tmx"

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .doggie {
+        height: 300px;
+        display: none;
+      }
+
+      .reveal {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="doggie.JPG" alt="" class="doggie" />
+
+    <script>
+      let doggie = document.querySelector(".doggie");
+
+      // setTimeout(() => {
+      //   doggie.classList.toggle("reveal");
+      // }, 2000);
+
+      // // setTimeout(reveal, 2000);
+
+      // function reveal() {
+      //   doggie.classList.toggle("reveal");
+      // }
+
+      setInterval(() => {
+        doggie.classList.toggle("reveal");
+      }, 1000);
+    </script>
+  </body>
+</html>
