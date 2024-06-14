@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moorhuhn</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta charset="utf-8" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      let chickens = [];
+      let chickenImage;
+      let speed = 2;
+      let score = 0;
+
+      function preload() {
+        chickenImage = loadImage("gentleman-chicken.svg");
+      }
+      function setup() {
+        createCanvas(window.innerWidth, window.innerHeight);
+
+        setInterval(function () {
+          let newChicken = {
+            x: random(0, window.innerWidth),
+            y: random(0, window.innerHeight),
+          };
+          chickens.push(newChicken);
+        }, 1000);
+      }
+
+      function draw() {
+        background(240);
+
+        chickenImage.resize(140, 0);
+        textSize(16);
+        textAlign(RIGHT, TOP);
+        text("Score: " + score, width - 100, 10);
+
+        for (let chicken of chickens) {
+          image(chickenImage, chicken.x, chicken.y);
+          chicken.x -= speed;
+
+          if (chicken.x < 0) {
+            let index = chickens.indexOf(chicken);
+            chickens.splice(index, 1);
+            score--;
+          }
+        }
+      }
+
+      function mouseClicked() {
+        chickens.forEach((chicken, index) => {
+          if (
+            mouseX >= chicken.x &&
+            mouseX <= chicken.x + chickenImage.width &&
+            mouseY >= chicken.y &&
+            mouseY <= chicken.y + chickenImage.height
+          ) {
+            chickens.splice(index, 1);
+            score++;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

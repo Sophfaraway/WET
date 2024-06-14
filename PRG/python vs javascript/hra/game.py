@@ -86,16 +86,16 @@ while True:
         player1_text = font.render("Player 1:", False, "#FFFFFF")
         lives1 = font.render(f"Lives: {player.sprite.lives}", False, "#FFFFFF")
         score1 = font.render(f"Score: {player.sprite.score}", False, "#FFFFFF")
-        screen.blit(lives1, (15, 665))
-        screen.blit(score1, (15, 685))
-        screen.blit(player1_text, (15, 650))
+        screen.blit(lives1, (15, 45))
+        screen.blit(score1, (15, 30))
+        screen.blit(player1_text, (15, 15))
 
         player2_text = font.render("Player 2:", False, "#FFFFFF")
         lives2 = font.render(f"Lives: {player2.sprite.lives}", False, "#FFFFFF")
         score2 = font.render(f"Score: {player2.sprite.score}", False, "#FFFFFF")
-        screen.blit(lives2, (1190, 665))
-        screen.blit(score2, (1190, 685))
-        screen.blit(player2_text, (1190, 640))
+        screen.blit(lives2, (1190, 45))
+        screen.blit(score2, (1190, 30))
+        screen.blit(player2_text, (1190, 15))
 
         if player.sprite.lives <= 0:
             game_over = True
