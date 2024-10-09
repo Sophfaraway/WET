@@ -17,11 +17,15 @@ def form():
     name = request.args.get("name" , default="______")
     input_class = request.args.get("input_class", default="______")
     message = request.args.get("message", default="______")
-    return render_template("form.html", name=name, input_class=input_class, message=message)
-
+    if name != "______"  and message != "______" and input_class != "______":
+        return redirect(url_for("result",  name=name, input_class=input_class, message=message))
+    return render_template("form.html")
 @app.route("/result")
 def result():
-    
+    name = request.args.get("name" , default="______")
+    input_class = request.args.get("input_class", default="______")
+    message = request.args.get("message", default="______")
+    return render_template("result.html",  name=name, input_class=input_class, message=message)
 
 if __name__ == "__main__":
     app.run(debug=True)
