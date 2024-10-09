@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade generator</title>
+    <style>
+        #div{
+            display: none;
+        }
+        #button{
+            margin: 50px;
+            background-color: aqua;
+            border-radius: 50%;
+            padding: 10px;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Grade generator</h1>
+    <input type="text" id="input"></input>
+    <button id="button">Submit</button>
+    <h2 id="number"></h2>
+    <h2 id="number2"></h2>
+    <div id="div">
+        <img src="muminek.jpeg" width="400" height="400">
+    </div>
+
+    <script>
+    let button = document.querySelector("#button");
+    let input = document.querySelector("#input");
+    let number = document.querySelector("#number");
+    let number2 = document.querySelector("#number2");
+    let div = document.querySelector("#div");
+
+    let grades = [1, 2, 3, 4, 5];
+    console.log(grades)
+
+    function getRandomItem(array) {
+            const randomIndex = Math.floor(Math.random() * array.length);
+            return array[randomIndex];
+    }
+
+    button.addEventListener("click", get_grade);
+    var count = 0;
+    var sum = 0
+    var average = 0
+
+    function get_grade(){
+        if (input.value === "Sophia"){
+            grades = [1, 2, 3, 4, 1];
+            const randomgrade = getRandomItem(grades);
+            console.log(randomgrade);
+            number.innerText = randomgrade;
+            count++;
+            sum = sum + randomgrade;
+            average = parseFloat(sum/count);
+            number2.innerText = average
+        }else{
+            const randomgrade = getRandomItem(grades);
+            console.log(randomgrade);
+            number.innerText = randomgrade;
+            count++;
+            sum = sum + randomgrade;
+            average = parseFloat(sum/count);
+            number2.innerText = average
+        } 
+        if(average >= 4.3){
+            number2.style.color = 'red';
+            div.style.display = "none";
+        }else if(average <= 1.5){
+            div.style.display = "block";
+        }else {
+            number2.style.color = 'black';
+            div.style.display = "none";
+        }
+    }
+
+    
+    
+    </script>
+</body>
+</html>
