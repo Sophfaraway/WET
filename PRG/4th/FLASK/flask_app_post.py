@@ -12,14 +12,18 @@ def hello():
 def bye():
     return render_template("bye.html")
 
-@app.route("/form")
+@app.route("/form", methods=["GET", "POST"])
 def form():
-    name = request.args.get("name" )
-    input_class = request.args.get("input_class")
-    message = request.args.get("message")
-    if name and message and input:
-        return redirect(url_for("result",  name=name, input_class=input_class, message=message))
+    if request.method == "POST":
+        name = request.form.get("name" )
+        input_class = request.form.get("input_class")
+        message = request.form.get("message")
+
+        if name and message and input_class:
+            return redirect(url_for("result",  name=name, input_class=input_class, message=message))
+        
     return render_template("form.html")
+
 @app.route("/result")
 def result():
     name = request.args.get("name", default="______")
