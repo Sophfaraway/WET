@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        table{
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th {
+            padding: 5px; 
+            background-color: lavender;
+            color: purple;
+            text-align: center;
+        }
+        td {
+            padding: 10px 10px;
+        }
+        tr:nth-child(even){
+            background-color: lightgrey;
+        }
+        tr:hover{
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h2>Answers:</h2>
+    <!-- <p> -->
+    <!-- Jinja -->
+    <!-- Person named {{ name }} from {{ input_class }} sends you this following message: {{ message }}
+    </p> -->
+    <div>
+    <table border="1">
+        <tr>
+            <!-- th - table heading -->
+            <th>ID</th>
+            <th>name</th>
+            <th>class</th>
+            <th>message</th>
+            <th>grade</th>
+        </tr>
+        <tr>
+            <!-- tr - table row -->
+            <!-- td - table data -->
+            {% for row in rows %}
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
