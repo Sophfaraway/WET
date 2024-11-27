@@ -42,6 +42,22 @@ def form():
         message = request.form.get("message")
         grade = random.randint(1,5)
 
+        if len(input_class) > 4:
+            input_class = "error"
+
+        if len(input_class) > 4:
+            print("error")
+
+        # if name.isspace() == True:
+        #     name.title()
+
+        if ' ' in name:
+            name = name.title()
+        else:
+            print("error 2")
+            name = "error"
+            
+
         cursor = get_db().cursor()
         cursor.execute(
             f"INSERT INTO students (student_name, class, student_message, grade) VALUES (?, ?, ?, ?)", (name, input_class, message, grade)
@@ -58,6 +74,7 @@ def result():
     cursor.execute("SELECT * FROM students")
     rows = cursor.fetchall()
     return render_template("result_all.html",  rows = rows)
+   
 
 # @app.route("/result2")
 # def result2():
