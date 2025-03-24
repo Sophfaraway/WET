@@ -8,7 +8,8 @@ filmy = {
 }
 
 with open("data.json", mode="w") as file:
-    json.dump(filmy, file, indent=4, ensure_ascii=False)
+    json.dump(filmy, file, indent=4, ensure_ascii=False) 
+    #indent - odsazení (4 znaky)
 
 with open("data.json", mode="r") as file:
     loaded_data = json.load(file)

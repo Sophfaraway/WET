@@ -65,6 +65,8 @@ def form():
         # if name and message and input_class:
         #     return redirect(url_for("result",  name=name, input_class=input_class, message=message))
         get_db().commit()
+
+        
         
     return render_template("form.html")
 
